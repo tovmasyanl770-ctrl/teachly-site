@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)file:///C:/Users/study/Downloads/teachly.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teachly — The Educator's Marketplace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./Teachly — The Educator&#39;s Marketplace_files/css2" rel="stylesheet">
+
+<style>
+/* ─── RESET & BASE ──────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream:   #F7F3EE;
+  --ink:     #1A1209;
+  --warm:    #2D1F0E;
+  --amber:   #E8823A;
+  --amber-l: #F5A96A;
+  --teal:    #1B7A6E;
+  --teal-l:  #28A896;
+  --sand:    #DDD0BF;
+  --muted:   #7A6E62;
+  --white:   #FFFFFF;
+  --card-bg: #FFFDF9;
+  --border:  #E4DDD4;
+  --shadow:  0 2px 24px rgba(26,18,9,0.08);
+  --shadow-hover: 0 8px 48px rgba(26,18,9,0.14);
+  --r: 14px;
+  --r-lg: 24px;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --nav-h: 68px;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { font-family: var(--font-body); cursor: pointer; border: none; outline: none; }
+
+/* ─── SCROLLBAR ─────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--sand); border-radius: 99px; }
+
+/* ─── NAV ───────────────────────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: var(--nav-h);
+  background: rgba(247,243,238,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center;
+  padding: 0 40px;
+  gap: 0;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 900;
+  color: var(--warm);
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+.nav-logo span { color: var(--amber); }
+.nav-search {
+  flex: 1;
+  margin: 0 32px;
+  position: relative;
+}
+.nav-search input {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  display: block;
+  padding: 10px 18px 10px 44px;
+  border: 1.5px solid var(--border);
+  border-radius: 99px;
+  background: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--ink);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.nav-search input:focus { border-color: var(--amber); box-shadow: 0 0 0 3px rgba(232,130,58,0.12); outline: none; }
+.nav-search input::placeholder { color: var(--muted); }
+.nav-search-icon {
+  position: absolute; left: 50%; transform: translateX(-218px);
+  top: 50%; margin-top: -9px;
+  width: 18px; height: 18px;
+  color: var(--muted);
+  pointer-events: none;
+}
+.nav-links {
+  display: flex; align-items: center; gap: 8px; flex-shrink: 0;
+}
+.nav-link {
+  padding: 8px 16px;
+  border-radius: 99px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--warm);
+  transition: background 0.18s;
+}
+.nav-link:hover { background: var(--sand); }
+.btn-primary {
+  padding: 9px 22px;
+  background: var(--amber);
+  color: var(--white);
+  border-radius: 99px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.18s, transform 0.14s;
+}
+.btn-primary:hover { background: var(--amber-l); transform: translateY(-1px); }
+.btn-outline {
+  padding: 9px 22px;
+  background: transparent;
+  color: var(--warm);
+  border: 1.5px solid var(--border);
+  border-radius: 99px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.18s, border-color 0.18s;
+}
+.btn-outline:hover { background: var(--sand); border-color: var(--sand); }
+
+/* ─── HERO ──────────────────────────────────────────────────────────── */
+.hero {
+  margin-top: var(--nav-h);
+  padding: 96px 40px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  max-width: 1240px;
+  margin-left: auto; margin-right: auto;
+  margin-top: calc(var(--nav-h) + 0px);
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 16px;
+  background: rgba(232,130,58,0.1);
+  border: 1px solid rgba(232,130,58,0.25);
+  border-radius: 99px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--amber);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.hero-tag-dot {
+  width: 6px; height: 6px;
+  background: var(--amber);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--warm);
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--amber);
+}
+.hero-desc {
+  font-size: 1.08rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 36px;
+}
+.hero-actions {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+.hero-actions .btn-primary { padding: 13px 30px; font-size: 1rem; }
+.hero-actions .btn-outline  { padding: 13px 30px; font-size: 1rem; }
+.hero-stats {
+  display: flex; gap: 32px;
+}
+.hero-stat { }
+.hero-stat-num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--warm);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+/* Hero right — product cards preview */
+.hero-visual {
+  position: relative;
+  height: 480px;
+}
+.hero-card {
+  position: absolute;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  transition: transform 0.3s;
+}
+.hero-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+.hero-card-main {
+  width: 280px; top: 0; right: 40px;
+  animation: float1 6s ease-in-out infinite;
+}
+.hero-card-2 {
+  width: 220px; bottom: 60px; right: 0;
+  animation: float2 7s ease-in-out infinite;
+}
+.hero-card-3 {
+  width: 200px; top: 120px; right: 260px;
+  animation: float3 5s ease-in-out infinite;
+}
+@keyframes float1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+@keyframes float2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+@keyframes float3 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+
+.hcard-thumb {
+  width: 100%; height: 120px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.8rem;
+}
+.hcard-cat {
+  font-size: 0.72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--muted); margin-bottom: 4px;
+}
+.hcard-title {
+  font-family: var(--font-display);
+  font-size: 1rem; font-weight: 700;
+  color: var(--warm); line-height: 1.25;
+  margin-bottom: 10px;
+}
+.hcard-row {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.hcard-price {
+  font-weight: 700; font-size: 1rem;
+  color: var(--teal);
+}
+.hcard-stars { font-size: 0.8rem; color: var(--amber); }
+
+/* ─── CATEGORIES STRIP ──────────────────────────────────────────────── */
+.cats-strip {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 0 40px;
+  background: var(--white);
+  overflow-x: auto;
+}
+.cats-inner {
+  display: flex; gap: 4px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 12px 0;
+}
+.cat-btn {
+  display: flex; align-items: center; gap: 7px;
+  padding: 8px 18px;
+  border-radius: 99px;
+  background: transparent;
+  border: 1.5px solid transparent;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--muted);
+  white-space: nowrap;
+  transition: all 0.18s;
+}
+.cat-btn:hover, .cat-btn.active {
+  background: var(--cream);
+  border-color: var(--border);
+  color: var(--warm);
+}
+.cat-btn.active { border-color: var(--amber); color: var(--amber); background: rgba(232,130,58,0.06); }
+.cat-icon { font-size: 1rem; }
+
+/* ─── SECTION SHARED ────────────────────────────────────────────────── */
+.section {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 72px 40px;
+}
+.section-hdr {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 36px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--warm);
+  line-height: 1.1;
+}
+.section-sub {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.see-all {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--amber);
+  display: flex; align-items: center; gap: 4px;
+  transition: gap 0.18s;
+}
+.see-all:hover { gap: 8px; }
+
+/* ─── PRODUCT GRID ──────────────────────────────────────────────────── */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+.product-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: transform 0.22s, box-shadow 0.22s;
+  cursor: pointer;
+  position: relative;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+.product-card:hover .product-overlay { opacity: 1; }
+.product-thumb {
+  height: 160px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem;
+  position: relative;
+}
+.product-overlay {
+  position: absolute; inset: 0;
+  background: rgba(26,18,9,0.35);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.2s;
+}
+.overlay-btn {
+  padding: 9px 22px;
+  background: var(--white);
+  color: var(--warm);
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+.product-body { padding: 16px; }
+.product-cat {
+  font-size: 0.72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--muted); margin-bottom: 5px;
+}
+.product-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem; font-weight: 700;
+  color: var(--warm); line-height: 1.2;
+  margin-bottom: 8px;
+}
+.product-seller {
+  font-size: 0.8rem; color: var(--muted); margin-bottom: 10px;
+  display: flex; align-items: center; gap: 5px;
+}
+.seller-dot {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 0.65rem;
+  color: var(--white);
+  font-weight: 700;
+}
+.product-footer {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.product-price {
+  font-weight: 700; font-size: 1.05rem;
+  color: var(--teal);
+}
+.product-rating {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 0.8rem; color: var(--muted);
+}
+.stars { color: var(--amber); font-size: 0.82rem; }
+.badge-free {
+  position: absolute; top: 12px; left: 12px;
+  background: var(--teal); color: var(--white);
+  font-size: 0.68rem; font-weight: 700;
+  padding: 3px 10px; border-radius: 99px;
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+.badge-hot {
+  position: absolute; top: 12px; left: 12px;
+  background: var(--amber); color: var(--white);
+  font-size: 0.68rem; font-weight: 700;
+  padding: 3px 10px; border-radius: 99px;
+}
+.badge-new {
+  position: absolute; top: 12px; left: 12px;
+  background: var(--warm); color: var(--white);
+  font-size: 0.68rem; font-weight: 700;
+  padding: 3px 10px; border-radius: 99px;
+}
+
+/* ─── HOW IT WORKS ──────────────────────────────────────────────────── */
+.how-bg {
+  background: var(--warm);
+  margin: 0;
+}
+.how-section {
+  max-width: 1240px; margin: 0 auto;
+  padding: 80px 40px;
+}
+.how-section .section-title { color: var(--cream); }
+.how-section .section-sub { color: var(--sand); }
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+.how-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--r-lg);
+  padding: 32px 28px;
+  transition: background 0.2s;
+}
+.how-card:hover { background: rgba(255,255,255,0.1); }
+.how-num {
+  font-family: var(--font-display);
+  font-size: 3rem; font-weight: 900;
+  color: var(--amber);
+  line-height: 1; margin-bottom: 16px;
+  opacity: 0.6;
+}
+.how-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem; font-weight: 700;
+  color: var(--cream); margin-bottom: 10px;
+}
+.how-desc { font-size: 0.92rem; color: var(--sand); line-height: 1.65; }
+
+/* ─── SELL BANNER ───────────────────────────────────────────────────── */
+.sell-banner {
+  background: linear-gradient(135deg, var(--amber) 0%, #C85F1A 100%);
+  border-radius: var(--r-lg);
+  padding: 56px 64px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+  margin: 0 40px;
+  max-width: 1160px;
+  margin-left: auto; margin-right: auto;
+  margin-bottom: 80px;
+}
+.sell-banner-title {
+  font-family: var(--font-display);
+  font-size: 2.4rem; font-weight: 900;
+  color: var(--white); line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+}
+.sell-banner-desc { font-size: 1rem; color: rgba(255,255,255,0.85); line-height: 1.6; }
+.btn-white {
+  padding: 14px 36px;
+  background: var(--white);
+  color: var(--amber);
+  border-radius: 99px;
+  font-weight: 700;
+  font-size: 1rem;
+  white-space: nowrap;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.18); }
+
+/* ─── TESTIMONIALS ──────────────────────────────────────────────────── */
+.testimonials { background: var(--white); }
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.testi-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 28px;
+}
+.testi-stars { color: var(--amber); font-size: 1rem; margin-bottom: 14px; }
+.testi-text {
+  font-size: 0.95rem; color: var(--ink);
+  line-height: 1.7; margin-bottom: 20px;
+  font-style: italic;
+}
+.testi-author { display: flex; align-items: center; gap: 12px; }
+.testi-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.9rem;
+  color: var(--white);
+  flex-shrink: 0;
+}
+.testi-name { font-weight: 600; font-size: 0.9rem; color: var(--warm); }
+.testi-role { font-size: 0.8rem; color: var(--muted); }
+
+/* ─── MODAL ─────────────────────────────────────────────────────────── */
+.modal-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(26,18,9,0.55);
+  backdrop-filter: blur(4px);
+  align-items: center; justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--card-bg);
+  border-radius: var(--r-lg);
+  width: 90%; max-width: 480px;
+  padding: 40px;
+  position: relative;
+  animation: modalIn 0.25s ease;
+}
+@keyframes modalIn {
+  from { transform: translateY(20px) scale(0.97); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+.modal-close {
+  position: absolute; top: 16px; right: 16px;
+  background: var(--sand);
+  border-radius: 50%; width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; color: var(--muted);
+  cursor: pointer; transition: background 0.15s;
+}
+.modal-close:hover { background: var(--border); }
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem; font-weight: 900;
+  color: var(--warm); margin-bottom: 6px;
+}
+.modal-sub { font-size: 0.9rem; color: var(--muted); margin-bottom: 28px; }
+.form-field { margin-bottom: 16px; }
+.form-label {
+  display: block; font-size: 0.85rem; font-weight: 600;
+  color: var(--warm); margin-bottom: 6px;
+}
+.form-input {
+  width: 100%;
+  padding: 11px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--r);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--white);
+  transition: border-color 0.18s;
+}
+.form-input:focus { border-color: var(--amber); outline: none; }
+.form-submit {
+  width: 100%;
+  padding: 13px;
+  background: var(--amber);
+  color: var(--white);
+  border-radius: 99px;
+  font-weight: 700; font-size: 1rem;
+  margin-top: 8px;
+  transition: background 0.18s;
+}
+.form-submit:hover { background: var(--amber-l); }
+.modal-switch {
+  text-align: center; font-size: 0.88rem;
+  color: var(--muted); margin-top: 20px;
+}
+.modal-switch a { color: var(--amber); font-weight: 600; cursor: pointer; }
+.divider {
+  display: flex; align-items: center; gap: 12px;
+  margin: 20px 0;
+}
+.divider-line { flex: 1; height: 1px; background: var(--border); }
+.divider-text { font-size: 0.8rem; color: var(--muted); }
+
+/* ─── FOOTER ────────────────────────────────────────────────────────── */
+footer {
+  background: var(--ink);
+  color: var(--sand);
+  padding: 64px 40px 40px;
+}
+.footer-inner {
+  max-width: 1240px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.6rem; font-weight: 900;
+  color: var(--cream); margin-bottom: 14px;
+}
+.footer-logo span { color: var(--amber); }
+.footer-desc { font-size: 0.88rem; line-height: 1.7; color: var(--sand); max-width: 280px; }
+.footer-heading {
+  font-weight: 700; font-size: 0.88rem;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--cream); margin-bottom: 18px;
+}
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a {
+  font-size: 0.88rem; color: var(--sand);
+  transition: color 0.15s;
+}
+.footer-links a:hover { color: var(--amber); }
+.footer-bottom {
+  max-width: 1240px; margin: 0 auto;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 28px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-bottom-text { font-size: 0.82rem; color: rgba(221,208,191,0.5); }
+
+/* ─── CART INDICATOR ────────────────────────────────────────────────── */
+.cart-btn {
+  position: relative;
+  background: transparent;
+  padding: 8px;
+  border-radius: 10px;
+  transition: background 0.15s;
+  color: var(--warm);
+}
+.cart-btn:hover { background: var(--sand); }
+.cart-count {
+  position: absolute; top: 2px; right: 2px;
+  background: var(--amber); color: var(--white);
+  border-radius: 50%; width: 16px; height: 16px;
+  font-size: 0.62rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ─── TOAST ─────────────────────────────────────────────────────────── */
+.toast {
+  position: fixed; bottom: 32px; right: 32px; z-index: 300;
+  background: var(--warm);
+  color: var(--cream);
+  padding: 14px 24px;
+  border-radius: var(--r);
+  font-size: 0.92rem; font-weight: 500;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+  transform: translateY(20px); opacity: 0;
+  transition: all 0.25s;
+  pointer-events: none;
+}
+.toast.show { transform: none; opacity: 1; }
+
+/* ─── UPLOAD BANNER ─────────────────────────────────────────────────── */
+.upload-zone {
+  border: 2px dashed var(--border);
+  border-radius: var(--r-lg);
+  padding: 40px;
+  text-align: center;
+  background: var(--white);
+  transition: border-color 0.2s, background 0.2s;
+  cursor: pointer;
+}
+.upload-zone:hover {
+  border-color: var(--amber);
+  background: rgba(232,130,58,0.03);
+}
+.upload-icon { font-size: 2.5rem; margin-bottom: 12px; }
+.upload-text { font-size: 0.95rem; color: var(--muted); }
+.upload-text strong { color: var(--warm); }
+
+/* ─── RESPONSIVE ────────────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr; padding: 64px 24px 48px; gap: 48px; }
+  .hero-visual { height: 320px; }
+  .hero-card-main { width: 220px; top: 0; right: 20px; }
+  .hero-card-2 { width: 180px; bottom: 20px; right: 0; }
+  .hero-card-3 { display: none; }
+  .how-grid, .testi-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .sell-banner { grid-template-columns: 1fr; text-align: center; padding: 40px 32px; }
+}
+@media (max-width: 640px) {
+  nav { padding: 0 16px; }
+  .nav-search { display: none; }
+  .section { padding: 48px 20px; }
+  .hero { padding: 48px 20px 32px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  .sell-banner { margin: 0 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─────────────────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-logo">Teach<span>ly</span></div>
+
+  <div class="nav-search">
+    <svg class="nav-search-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path>
+    </svg>
+    <input type="text" placeholder="Search worksheets, lesson plans, phonics packs…">
+  </div>
+
+  <div class="nav-links">
+    <a class="nav-link" href="file:///C:/Users/study/Downloads/teachly.html#browse">Browse</a>
+    <a class="nav-link" href="file:///C:/Users/study/Downloads/teachly.html#sell" onclick="showSellModal()">Sell</a>
+    <button class="cart-btn" onclick="showToast(&#39;🛒 Cart coming soon!&#39;)">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <path d="M16 10a4 4 0 0 1-8 0"></path>
+      </svg>
+      <span class="cart-count" id="cartCount">1</span>
+    </button>
+    <button class="btn-outline" onclick="openModal(&#39;login&#39;)">Log in</button>
+    <button class="btn-primary" onclick="openModal(&#39;signup&#39;)">Sign up free</button>
+  </div>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">
+      <div class="hero-tag-dot"></div>
+      The Free Alternative to TpT
+    </div>
+    <h1>Teaching resources that <em>actually</em> pay you.</h1>
+    <p class="hero-desc">
+      Teachly is the open marketplace where educators buy, sell, and share classroom materials — worksheets, lesson plans, phonics packs, and more. Zero listing fees. Lower commissions. More money in your pocket.
+    </p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="openModal(&#39;signup&#39;)">Start selling free →</button>
+      <button class="btn-outline" onclick="document.getElementById(&#39;browse&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Browse resources</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">0%</div>
+        <div class="hero-stat-label">Listing fee</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">85%</div>
+        <div class="hero-stat-label">You keep</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">∞</div>
+        <div class="hero-stat-label">Products to sell</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-card hero-card-3">
+      <div class="hcard-thumb" style="background:#E8F4FD;">📚</div>
+      <div class="hcard-cat">Literacy</div>
+      <div class="hcard-title">Novel Study Bundle</div>
+      <div class="hcard-row">
+        <div class="hcard-price">$12.00</div>
+        <div class="hcard-stars">★★★★★</div>
+      </div>
+    </div>
+    <div class="hero-card hero-card-main">
+      <div class="hcard-thumb" style="background:#FFF0EC;">🔤</div>
+      <div class="hcard-cat">Phonics • K–2</div>
+      <div class="hcard-title">Short 'A' CVC Complete Pack</div>
+      <div class="hcard-row">
+        <div class="hcard-price">$5.00</div>
+        <div class="hcard-stars">★★★★★</div>
+      </div>
+    </div>
+    <div class="hero-card hero-card-2">
+      <div class="hcard-thumb" style="background:#E8F8EE;">📊</div>
+      <div class="hcard-cat">Math</div>
+      <div class="hcard-title">Grade 7 Fractions Pack</div>
+      <div class="hcard-row">
+        <div class="hcard-price">$4.00</div>
+        <div class="hcard-stars">★★★★☆</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CATEGORIES ───────────────────────────────────────────────────── -->
+<div class="cats-strip">
+  <div class="cats-inner">
+    <button class="cat-btn" onclick="filterCat(this,&#39;all&#39;)"><span class="cat-icon">✨</span>All</button>
+    <button class="cat-btn" onclick="filterCat(this,&#39;phonics&#39;)"><span class="cat-icon">🔤</span>Phonics</button>
+    <button class="cat-btn" onclick="filterCat(this,&#39;math&#39;)"><span class="cat-icon">📐</span>Math</button>
+    <button class="cat-btn" onclick="filterCat(this,&#39;literacy&#39;)"><span class="cat-icon">📚</span>Literacy</button>
+    <button class="cat-btn" onclick="filterCat(this,&#39;science&#39;)"><span class="cat-icon">🔬</span>Science</button>
+    <button class="cat-btn" onclick="filterCat(this,&#39;social&#39;)"><span class="cat-icon">🌍</span>Social Studies</button>
+    <button class="cat-btn" onclick="filterCat(this,&#39;sel&#39;)"><span class="cat-icon">💚</span>SEL</button>
+    <button class="cat-btn" onclick="filterCat(this,&#39;planners&#39;)"><span class="cat-icon">📋</span>Planners</button>
+    <button class="cat-btn active" onclick="filterCat(this,&#39;decor&#39;)"><span class="cat-icon">🎨</span>Classroom Decor</button>
+    <button class="cat-btn" onclick="filterCat(this,&#39;special-ed&#39;)"><span class="cat-icon">💛</span>Special Ed</button>
+    <button class="cat-btn" onclick="filterCat(this,&#39;free&#39;)"><span class="cat-icon">🆓</span>Free</button>
+  </div>
+</div>
+
+<!-- ─── PRODUCTS ─────────────────────────────────────────────────────── -->
+<section class="section" id="browse">
+  <div class="section-hdr">
+    <div>
+      <div class="section-title">Featured Resources</div>
+      <div class="section-sub">Hand-picked by our educator community</div>
+    </div>
+    <a class="see-all" href="file:///C:/Users/study/Downloads/teachly.html#">View all →</a>
+  </div>
+
+  <div class="product-grid" id="productGrid">
+    <div class="product-card" onclick="addToCart(10, &#39;Classroom Decor: Boho Neutral Set&#39;, 8)">
+      <div class="product-thumb" style="background:#FFF0EC">
+        
+        
+        
+        🎨
+        <div class="product-overlay">
+          <div class="overlay-btn">Quick Add</div>
+        </div>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">DECOR • Grade All</div>
+        <div class="product-title">Classroom Decor: Boho Neutral Set</div>
+        <div class="product-seller">
+          <span class="seller-dot" style="background:#C85F1A">D</span>
+          DesignByDana
+        </div>
+        <div class="product-footer">
+          <div class="product-price">$8.00</div>
+          <div class="product-rating">
+            <span class="stars">★★★★★</span>
+            <span>(29)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOW IT WORKS ─────────────────────────────────────────────────── -->
+<div class="how-bg">
+  <div class="how-section">
+    <div class="section-hdr">
+      <div>
+        <div class="section-title">How Teachly works</div>
+        <div class="section-sub" style="color:var(--sand)">For buyers and sellers alike — simple, fast, fair.</div>
+      </div>
+    </div>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-num">01</div>
+        <div class="how-title">Create your free account</div>
+        <div class="how-desc">Sign up in 30 seconds. No credit card needed. Browse or set up your seller storefront instantly — everything is free to start.</div>
+      </div>
+      <div class="how-card">
+        <div class="how-num">02</div>
+        <div class="how-title">Upload &amp; list your resources</div>
+        <div class="how-desc">Drag and drop your PDFs, worksheets, and lesson packs. Set your price, write a description, and you're live — it takes under 5 minutes.</div>
+      </div>
+      <div class="how-card">
+        <div class="how-num">03</div>
+        <div class="how-title">Get paid, keep 85%</div>
+        <div class="how-desc">Every time someone buys your resource, you keep 85% of the sale. No listing fees, no renewal costs. Payouts via Stripe to your bank.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SELL BANNER ──────────────────────────────────────────────────── -->
+<section class="section" id="sell" style="padding-bottom: 80px; padding-top: 80px;">
+  <div class="sell-banner">
+    <div>
+      <div class="sell-banner-title">Ready to turn your<br>lessons into income?</div>
+      <div class="sell-banner-desc">Join thousands of educators who sell their resources on Teachly. You keep 85% — TpT gives you just 55–80%. That's real money back in your classroom.</div>
+    </div>
+    <button class="btn-white" onclick="openModal(&#39;signup&#39;)">Start selling free →</button>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─────────────────────────────────────────────────── -->
+<div class="testimonials">
+  <section class="section">
+    <div class="section-hdr">
+      <div>
+        <div class="section-title">Educators love Teachly</div>
+        <div class="section-sub">Real teachers, real results</div>
+      </div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"I made more in my first month on Teachly than in three months on TpT. The 85% commission is just unreal — I can actually reinvest in making better resources."</div>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:var(--teal)">MR</div>
+          <div>
+            <div class="testi-name">Ms. Rivera</div>
+            <div class="testi-role">Grade 3 Teacher · Ontario</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Finally a marketplace that doesn't take half my earnings. The phonics resources here are incredible quality and super affordable. My students are thriving."</div>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:var(--amber)">DK</div>
+          <div>
+            <div class="testi-name">Mr. Kim</div>
+            <div class="testi-role">K–2 Reading Specialist · BC</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Setting up my store took literally 10 minutes. I uploaded 5 worksheet packs that afternoon and had my first sale within 48 hours. Teachly just works."</div>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:var(--warm)">AP</div>
+          <div>
+            <div class="testi-name">Ms. Patel</div>
+            <div class="testi-role">Middle School Math · Alberta</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ─── FOOTER ───────────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Teach<span>ly</span></div>
+      <div class="footer-desc">The open marketplace for educators. Buy, sell, and share classroom resources — with the fairest commission in the industry.</div>
+    </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <ul class="footer-links">
+        <li><a href="file:///C:/Users/study/Downloads/teachly.html#">Browse All</a></li>
+        <li><a href="file:///C:/Users/study/Downloads/teachly.html#">Phonics Packs</a></li>
+        <li><a href="file:///C:/Users/study/Downloads/teachly.html#">Worksheets</a></li>
+        <li><a href="file:///C:/Users/study/Downloads/teachly.html#">Lesson Plans</a></li>
+        <li><a href="file:///C:/Users/study/Downloads/teachly.html#">Free Resources</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Sellers</div>
+      <ul class="footer-links">
+        <li><a href="file:///C:/Users/study/Downloads/teachly.html#">Start Selling</a></li>
+        <li><a href="file:///C:/Users/study/Downloads/teachly.html#">Seller Dashboard</a></li>
+        <li><a href="file:///C:/Users/study/Downloads/teachly.html#">Pricing &amp; Fees</a></li>
+        <li><a href="file:///C:/Users/study/Downloads/teachly.html#">Seller Guide</a></li>
+        <li><a href="file:///C:/Users/study/Downloads/teachly.html#">Payouts</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Company</div>
+      <ul class="footer-links">
+        <li><a href="file:///C:/Users/study/Downloads/teachly.html#">About Teachly</a></li>
+        <li><a href="file:///C:/Users/study/Downloads/teachly.html#">Blog</a></li>
+        <li><a href="file:///C:/Users/study/Downloads/teachly.html#">Careers</a></li>
+        <li><a href="file:///C:/Users/study/Downloads/teachly.html#">Privacy Policy</a></li>
+        <li><a href="file:///C:/Users/study/Downloads/teachly.html#">Terms of Use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-text">© 2025 Teachly. All rights reserved.</div>
+    <div class="footer-bottom-text">Made for educators, by educators. 🍎</div>
+  </div>
+</footer>
+
+<!-- ─── AUTH MODAL ───────────────────────────────────────────────────── -->
+<div class="modal-overlay" id="authModal">
+  <div class="modal">
+    <div class="modal-close" onclick="closeModal()">✕</div>
+    <div id="modalContent">
+      <div class="modal-title">Join Teachly free</div>
+      <div class="modal-sub">Start buying or selling in under a minute.</div>
+      <div class="form-field"><label class="form-label">Full name</label><input class="form-input" type="text" placeholder="Your name"></div>
+      <div class="form-field"><label class="form-label">Email address</label><input class="form-input" type="email" placeholder="you@school.com"></div>
+      <div class="form-field"><label class="form-label">Password</label><input class="form-input" type="password" placeholder="Create a password"></div>
+      <div class="form-field">
+        <label class="form-label">I am a…</label>
+        <select class="form-input"><option>Teacher</option><option>Student</option><option>Homeschool Parent</option><option>Tutor</option><option>Other Educator</option></select>
+      </div>
+      <button class="form-submit" onclick="showToast(&#39;🎉 Welcome to Teachly!&#39;); closeModal()">Create free account</button>
+      <div class="modal-switch">Already have an account? <a onclick="openModal(&#39;login&#39;)">Log in</a></div></div>
+  </div>
+</div>
+
+<!-- ─── SELL MODAL ───────────────────────────────────────────────────── -->
+<div class="modal-overlay" id="sellModal">
+  <div class="modal">
+    <div class="modal-close" onclick="closeSellModal()">✕</div>
+    <div class="modal-title">Upload a Resource</div>
+    <div class="modal-sub">List your materials on Teachly and start earning today.</div>
+    <div class="form-field">
+      <label class="form-label">Resource Title</label>
+      <input class="form-input" type="text" placeholder="e.g. Short &#39;A&#39; CVC Phonics Pack — Grade K">
+    </div>
+    <div class="form-field">
+      <label class="form-label">Category</label>
+      <select class="form-input">
+        <option>Phonics</option><option>Math</option><option>Literacy</option>
+        <option>Science</option><option>Social Studies</option><option>SEL</option>
+        <option>Planners &amp; Organisation</option><option>Classroom Decor</option>
+        <option>Special Education</option>
+      </select>
+    </div>
+    <div class="form-field">
+      <label class="form-label">Price (USD)</label>
+      <input class="form-input" type="number" placeholder="e.g. 5.00" min="0" step="0.50">
+    </div>
+    <div class="upload-zone" onclick="showToast(&#39;📁 File picker coming soon!&#39;)">
+      <div class="upload-icon">📂</div>
+      <div class="upload-text"><strong>Click to upload</strong> or drag &amp; drop your PDF here</div>
+    </div>
+    <button class="form-submit" style="margin-top:20px" onclick="showToast(&#39;🎉 Listing saved! Sign in to publish.&#39;); closeSellModal()">List My Resource</button>
+  </div>
+</div>
+
+<!-- ─── TOAST ────────────────────────────────────────────────────────── -->
+<div class="toast" id="toast">🛒 Cart coming soon!</div>
+
+<!-- ─── JS ──────────────────────────────────────────────────────────── -->
+<script>
+// ── Product data ─────────────────────────────────────────────────────
+const products = [
+  { id:1,  title:"Short 'A' CVC Phonics Pack",        cat:"phonics",   grade:"K–2",  price:5,    rating:5.0, reviews:47, emoji:"🔤", bg:"#FFF0EC", seller:"Teachly Originals", sellerColor:"#1B7A6E", badge:"hot",  tags:["phonics"] },
+  { id:2,  title:"Short Vowels Mega Bundle (A–U)",     cat:"phonics",   grade:"K–2",  price:18,   rating:5.0, reviews:31, emoji:"🌟", bg:"#FFFBE8", seller:"Teachly Originals", sellerColor:"#1B7A6E", badge:"new",  tags:["phonics"] },
+  { id:3,  title:"Grade 7 Fractions Worksheet Pack",   cat:"math",      grade:"7",    price:4,    rating:4.8, reviews:62, emoji:"📐", bg:"#E8F4FD", seller:"MathsByMr.K",       sellerColor:"#E8823A", badge:null,   tags:["math"] },
+  { id:4,  title:"Morning Work Pack — Grade 3 (Fall)", cat:"literacy",  grade:"3",    price:9,    rating:4.9, reviews:88, emoji:"🍁", bg:"#FFF0EC", seller:"ClassroomMaven",    sellerColor:"#9B7FD4", badge:"hot",  tags:["literacy"] },
+  { id:5,  title:"Novel Study: The Outsiders",         cat:"literacy",  grade:"8",    price:12,   rating:4.7, reviews:55, emoji:"📚", bg:"#F3EFFC", seller:"ELAByDesign",       sellerColor:"#C85F1A", badge:null,   tags:["literacy"] },
+  { id:6,  title:"Free Sight Words Flashcards",        cat:"phonics",   grade:"K–1",  price:0,    rating:5.0, reviews:124,emoji:"🆓", bg:"#E8F8EE", seller:"ReadingRoots",      sellerColor:"#4CAF7D", badge:"free", tags:["phonics","free"] },
+  { id:7,  title:"Grade 8 Science: Cells & Systems",   cat:"science",   grade:"8",    price:6,    rating:4.8, reviews:33, emoji:"🔬", bg:"#E8F4FD", seller:"ScienceNerd101",    sellerColor:"#1B7A6E", badge:null,   tags:["science"] },
+  { id:8,  title:"SEL Unit: Emotions & Regulation",    cat:"sel",       grade:"4–6",  price:14,   rating:5.0, reviews:41, emoji:"💚", bg:"#E8F8EE", seller:"MindfulTeacher",    sellerColor:"#4CAF7D", badge:"new",  tags:["sel"] },
+  { id:9,  title:"Editable Teacher Planner 2025–26",   cat:"planners",  grade:"All",  price:22,   rating:4.9, reviews:77, emoji:"📋", bg:"#FFFBE8", seller:"PlannerPro",        sellerColor:"#E8823A", badge:null,   tags:["planners"] },
+  { id:10, title:"Classroom Decor: Boho Neutral Set",  cat:"decor",     grade:"All",  price:8,    rating:4.6, reviews:29, emoji:"🎨", bg:"#FFF0EC", seller:"DesignByDana",      sellerColor:"#C85F1A", badge:null,   tags:["decor"] },
+  { id:11, title:"IEP Goal Bank — All Disabilities",   cat:"special-ed",grade:"All",  price:16,   rating:5.0, reviews:58, emoji:"💛", bg:"#FFFBE8", seller:"SpedSupport",       sellerColor:"#9B7FD4", badge:"hot",  tags:["special-ed"] },
+  { id:12, title:"Free: 10 Sub Plan Templates",        cat:"planners",  grade:"All",  price:0,    rating:4.8, reviews:93, emoji:"📝", bg:"#E8F4FD", seller:"TeacherSaver",      sellerColor:"#1B7A6E", badge:"free", tags:["planners","free"] },
+];
+
+let cartCount = 0;
+
+function renderProducts(filter = 'all') {
+  const grid = document.getElementById('productGrid');
+  const filtered = filter === 'all' ? products : products.filter(p => p.tags.includes(filter));
+  grid.innerHTML = filtered.map(p => `
+    <div class="product-card" onclick="addToCart(${p.id}, '${p.title}', ${p.price})">
+      <div class="product-thumb" style="background:${p.bg}">
+        ${p.badge === 'free'  ? '<div class="badge-free">Free</div>'  : ''}
+        ${p.badge === 'hot'   ? '<div class="badge-hot">🔥 Hot</div>'  : ''}
+        ${p.badge === 'new'   ? '<div class="badge-new">New</div>'    : ''}
+        ${p.emoji}
+        <div class="product-overlay">
+          <div class="overlay-btn">${p.price === 0 ? 'Download Free' : 'Quick Add'}</div>
+        </div>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">${p.cat.toUpperCase()} • Grade ${p.grade}</div>
+        <div class="product-title">${p.title}</div>
+        <div class="product-seller">
+          <span class="seller-dot" style="background:${p.sellerColor}">${p.seller[0]}</span>
+          ${p.seller}
+        </div>
+        <div class="product-footer">
+          <div class="product-price">${p.price === 0 ? 'Free' : '$' + p.price.toFixed(2)}</div>
+          <div class="product-rating">
+            <span class="stars">${'★'.repeat(Math.round(p.rating))}</span>
+            <span>(${p.reviews})</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function addToCart(id, title, price) {
+  if (price === 0) {
+    showToast(`✅ "${title}" downloading…`);
+    return;
+  }
+  cartCount++;
+  document.getElementById('cartCount').textContent = cartCount;
+  showToast(`🛒 Added "${title}" — $${price.toFixed(2)}`);
+}
+
+function filterCat(btn, cat) {
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProducts(cat);
+}
+
+// ── Auth modal ───────────────────────────────────────────────────────
+function openModal(type) {
+  const modal = document.getElementById('authModal');
+  const content = document.getElementById('modalContent');
+  if (type === 'signup') {
+    content.innerHTML = `
+      <div class="modal-title">Join Teachly free</div>
+      <div class="modal-sub">Start buying or selling in under a minute.</div>
+      <div class="form-field"><label class="form-label">Full name</label><input class="form-input" type="text" placeholder="Your name" /></div>
+      <div class="form-field"><label class="form-label">Email address</label><input class="form-input" type="email" placeholder="you@school.com" /></div>
+      <div class="form-field"><label class="form-label">Password</label><input class="form-input" type="password" placeholder="Create a password" /></div>
+      <div class="form-field">
+        <label class="form-label">I am a…</label>
+        <select class="form-input"><option>Teacher</option><option>Student</option><option>Homeschool Parent</option><option>Tutor</option><option>Other Educator</option></select>
+      </div>
+      <button class="form-submit" onclick="showToast('🎉 Welcome to Teachly!'); closeModal()">Create free account</button>
+      <div class="modal-switch">Already have an account? <a onclick="openModal('login')">Log in</a></div>`;
+  } else {
+    content.innerHTML = `
+      <div class="modal-title">Welcome back</div>
+      <div class="modal-sub">Log in to your Teachly account.</div>
+      <div class="form-field"><label class="form-label">Email address</label><input class="form-input" type="email" placeholder="you@school.com" /></div>
+      <div class="form-field"><label class="form-label">Password</label><input class="form-input" type="password" placeholder="Your password" /></div>
+      <button class="form-submit" onclick="showToast('👋 Logged in successfully!'); closeModal()">Log in</button>
+      <div class="divider"><div class="divider-line"></div><span class="divider-text">or</span><div class="divider-line"></div></div>
+      <button class="form-submit" style="background:var(--teal)" onclick="showToast('🔗 Google sign-in coming soon!')">Continue with Google</button>
+      <div class="modal-switch">New to Teachly? <a onclick="openModal('signup')">Sign up free</a></div>`;
+  }
+  modal.classList.add('open');
+}
+function closeModal() { document.getElementById('authModal').classList.remove('open'); }
+
+function showSellModal() { document.getElementById('sellModal').classList.add('open'); }
+function closeSellModal() { document.getElementById('sellModal').classList.remove('open'); }
+
+// Close on backdrop click
+document.getElementById('authModal').addEventListener('click', e => { if(e.target === e.currentTarget) closeModal(); });
+document.getElementById('sellModal').addEventListener('click', e => { if(e.target === e.currentTarget) closeSellModal(); });
+
+// ── Toast ─────────────────────────────────────────────────────────────
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// ── Init ──────────────────────────────────────────────────────────────
+renderProducts();
+
+// Search filter
+document.querySelector('.nav-search input').addEventListener('input', e => {
+  const q = e.target.value.toLowerCase();
+  const grid = document.getElementById('productGrid');
+  const filtered = products.filter(p =>
+    p.title.toLowerCase().includes(q) ||
+    p.cat.toLowerCase().includes(q) ||
+    p.seller.toLowerCase().includes(q)
+  );
+  if (!q) { renderProducts(); return; }
+  grid.innerHTML = filtered.map(p => `
+    <div class="product-card" onclick="addToCart(${p.id}, '${p.title}', ${p.price})">
+      <div class="product-thumb" style="background:${p.bg}">${p.emoji}
+        <div class="product-overlay"><div class="overlay-btn">${p.price===0?'Download Free':'Quick Add'}</div></div>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">${p.cat.toUpperCase()} • Grade ${p.grade}</div>
+        <div class="product-title">${p.title}</div>
+        <div class="product-seller"><span class="seller-dot" style="background:${p.sellerColor}">${p.seller[0]}</span>${p.seller}</div>
+        <div class="product-footer">
+          <div class="product-price">${p.price===0?'Free':'$'+p.price.toFixed(2)}</div>
+          <div class="product-rating"><span class="stars">${'★'.repeat(Math.round(p.rating))}</span><span>(${p.reviews})</span></div>
+        </div>
+      </div>
+    </div>
+  `).join('') || '<p style="color:var(--muted);padding:24px;grid-column:1/-1">No results found.</p>';
+});
+
+// Keyboard close
+document.addEventListener('keydown', e => { if(e.key === 'Escape') { closeModal(); closeSellModal(); } });
+</script>
+
+
+</body></html>
